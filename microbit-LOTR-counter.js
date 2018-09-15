@@ -24,9 +24,15 @@ function DrawRounds()  {
 }
 brt = 255
 basic.forever(() => {
-    if (isInProgress) {
-        led.toggle(x % 5, x / 5)
-        basic.pause(500)
+    if (input.pinIsPressed(TouchPin.P2)) {
+        for (let i = 0; i < 25; i++) {
+            led.plotBrightness(Math.random(5), Math.random(5), Math.random(2) * Math.random(256))
+        }
+    } else {
+        if (isInProgress) {
+            led.toggle(x % 5, x / 5)
+            basic.pause(500)
+        }
     }
 })
 
