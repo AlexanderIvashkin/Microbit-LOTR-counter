@@ -29,6 +29,7 @@ function DrawRounds() {
 brt = 255
 basic.forever(() => {
     if (input.pinIsPressed(TouchPin.P2)) {
+        isDisplay=false
         for (let i = 0; i < 25; i++) {
             led.plotBrightness(Math.random(5), Math.random(5), Math.random(2) * Math.random(256))
         }
