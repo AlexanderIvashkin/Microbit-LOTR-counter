@@ -1,5 +1,6 @@
 # Microbit-LOTR-counter
-A round counter for LOTR: The LCG built on the BBC Microbit.
+A generic round counter for tabletop games (built with LOTR: The LCG in mind) created to run on the BBC Microbit.
+What's a Microbit?.. Visit the official site: https://microbit.org
 
 ## Installation
 Install the .hex file onto your BBC Microbit.
