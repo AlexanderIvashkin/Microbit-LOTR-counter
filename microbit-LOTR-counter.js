@@ -20,7 +20,6 @@ function DrawRounds()  {
 }
 brt = 255
 basic.forever(() => {
-    led.toggle((x) % 5, (x) / 5)
-    basic.pause(500)
+	
 })
 
