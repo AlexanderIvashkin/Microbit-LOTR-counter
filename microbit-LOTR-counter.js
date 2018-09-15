@@ -1,12 +1,13 @@
 let x = 0
+let isInProgress = false
 let brt = 0
 input.onPinPressed(TouchPin.P0, () => {
     brt = (brt + 32) % 256
     led.setBrightness(brt)
 })
 input.onButtonPressed(Button.A, () => {
-    isInProgress != isInProgress
-if (!(isInProgress)) {
+    isInProgress = !(isInProgress)
+    if (!(isInProgress)) {
         x += 1
     }
     DrawRounds()
@@ -21,7 +22,6 @@ function DrawRounds()  {
         led.plot((j - 1) % 5, (j - 1) / 5)
     }
 }
-let isInProgress = false
 brt = 255
 basic.forever(() => {
     if (isInProgress) {
