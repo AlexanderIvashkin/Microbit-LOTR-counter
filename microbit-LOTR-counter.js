@@ -4,11 +4,6 @@ input.onPinPressed(TouchPin.P0, () => {
     brt = (brt + 32) % 256
     led.setBrightness(brt)
 })
-input.onPinPressed(TouchPin.P2, () => {
-    for (let i = 0; i < 25; i++) {
-        led.plotBrightness(Math.random(4), Math.random(4), Math.random(255))
-    }
-})
 input.onButtonPressed(Button.A, () => {
     x += 1
     DrawRounds()
@@ -25,9 +20,5 @@ function DrawRounds()  {
 }
 brt = 255
 basic.forever(() => {
-    if (input.pinIsPressed(TouchPin.P2)) {
-        for (let i = 0; i < 25; i++) {
-            led.plotBrightness(Math.random(5), Math.random(5), Math.random(2) * Math.random(256))
-        }
-    }
+    led.toggle((x - 1) % 5, (x - 1) / 5)
 })
