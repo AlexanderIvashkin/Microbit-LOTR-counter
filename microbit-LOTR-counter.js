@@ -15,11 +15,12 @@ input.onButtonPressed(Button.A, () => {
     isDisplay = true
 })
 input.onButtonPressed(Button.B, () => {
+    isDisplay = false
     basic.showNumber(x)
     DrawRounds()
     isDisplay = true
 })
-function DrawRounds()  {
+function DrawRounds() {
     basic.clearScreen()
     for (let j = 0; j <= x; j++) {
         led.plot((j - 1) % 5, (j - 1) / 5)
