@@ -1,7 +1,8 @@
 let x = 0
 let isInProgress = false
+let isDisplay = true
 let brt = 0
-input.onPinPressed(TouchPin.P0, () => {
+input.onPinPressed(TouchPin.P1, () => {
     brt = (brt + 32) % 256
     led.setBrightness(brt)
 })
@@ -11,10 +12,12 @@ input.onButtonPressed(Button.A, () => {
         x += 1
     }
     DrawRounds()
+    isDisplay = true
 })
 input.onButtonPressed(Button.B, () => {
     basic.showNumber(x)
     DrawRounds()
+    isDisplay = true
 })
 function DrawRounds()  {
     basic.clearScreen()
@@ -29,7 +32,7 @@ basic.forever(() => {
             led.plotBrightness(Math.random(5), Math.random(5), Math.random(2) * Math.random(256))
         }
     } else {
-        if (isInProgress) {
+        if (isInProgress && isDisplay) {
             led.toggle(x % 5, x / 5)
             basic.pause(500)
         }
